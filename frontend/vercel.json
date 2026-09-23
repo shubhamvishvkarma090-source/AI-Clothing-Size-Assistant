@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "cloth-measurement-frontend",
+  "builds": [
+    { "src": "**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

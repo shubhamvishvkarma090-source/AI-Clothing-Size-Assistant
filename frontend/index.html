@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Closet Assistant</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Closet assistant</p>
+          <h1>AI Clothing Size Assistant</h1>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel capture-panel">
+          <h2>Capture garment</h2>
+
+          <div class="camera-box">
+            <video id="cameraView" autoplay playsinline muted></video>
+            <canvas id="captureCanvas" style="display: none"></canvas>
+            <img id="capturedImage" alt="Captured garment preview" />
+          </div>
+
+          <div class="actions">
+            <button id="startCameraBtn" type="button">Start camera</button>
+            <button id="capturePhotoBtn" type="button" class="primary">
+              Capture photo
+            </button>
+            <label class="upload-btn">
+              <input id="fileInput" type="file" accept="image/*" />
+              Upload image
+            </label>
+          </div>
+
+          <div id="status" class="status">Ready to measure.</div>
+        </section>
+
+        <section class="panel result-panel">
+          <h2>Measurements</h2>
+          <div id="measurementResult" class="measurement-result empty">
+            No measurement yet.
+          </div>
+
+          <div class="chat-panel">
+            <div id="chatMessages" class="chat-messages">
+              <div class="message bot">
+                Ask about the garment, for example: “What is the chest size?”
+              </div>
+            </div>
+
+            <div class="chat-input-row">
+              <input
+                id="chatInput"
+                type="text"
+                placeholder="Ask about length, chest, shoulder..."
+              />
+              <button id="sendChatBtn" type="button">Send</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
